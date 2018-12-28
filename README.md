@@ -5,7 +5,29 @@ A course project of The Advanced Object-Oriented Technology which offer interact
 Purpose:
 
 * Object-Oriented Analysis with UML Diagrams
-* Object-Oriented Design / Programming with WebRTC (for media stream) and Qt (for C++ GUI)
+* Object-Oriented Design / Programming with ffmpeg (for media stream) and Qt (for C++ GUI)
+
+## Demo
+
+```sh
+# MacOS
+cd MacDemo
+# Start ffmpeg
+./demo_start_ffmpeg.sh
+# Start main program
+open IntelligenceClassroom.app
+# or (for open multiple applications)
+./IntelligenceClassroom.app/Contents/MacOS/IntelligenceClassroom &
+
+# Close ffmpeg
+./find_and_kill.sh
+```
+
+## TODO
+
+* [ ] ffmpeg Audio sound
+* [ ] Demo Screenshot
+* [ ] Make a portable package?!
 
 ## UML Diagram
 
