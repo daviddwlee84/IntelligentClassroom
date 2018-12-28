@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
+ICON   += classroom_512x512.icns
+
 SOURCES += \
         main.cpp \
         mainwindow.cpp
