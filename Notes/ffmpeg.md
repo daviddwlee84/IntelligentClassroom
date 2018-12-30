@@ -13,9 +13,21 @@ make -j4
 # You would like to export PATH to the folder to lead to the executable binary
 ```
 
+Using Homebrew
+
+[options](https://sites.duke.edu/ddmc/2013/12/30/install-ffmpeg-on-a-mac/)
+
 ```sh
 # The newest version doesn't include ffserver
 brew install ffmpeg
+```
+
+[Compile with OpenH264](VideoEncoding.md#H264)
+
+```sh
+./configure --enable-libopenh264
+# if you didn't install OpenH264 will get the error
+# ERROR: openh264 not found using pkg-config
 ```
 
 ## CLI
@@ -66,7 +78,8 @@ Record from webcam (in this case)
 
 ```sh
 # Record from webcam (in this case)
-ffmpeg -f avfoundation -framerate 30 -i "0" out.mpg
+# 0:0 === video:audio
+ffmpeg -f avfoundation -framerate 30 -i "0:0" out.mpg
 ```
 
 > must specify framerate or you'll get the error `Selected framerate (29.970030) is not supported by the device`
@@ -97,6 +110,7 @@ Example settings
 ## Links
 
 * [leandromoreira/ffmpeg-libav-tutorial](https://github.com/leandromoreira/ffmpeg-libav-tutorial) - [WIP] Learn FFmpeg libav the Hard Way
+* [GithubGist - tomasinouk/ffmpeg_examples.md](https://gist.github.com/tomasinouk/8415acb4e2f86d54fcb9)
 
 With Qt
 
@@ -111,3 +125,5 @@ ffserver? -> can't find in brew -> ffserver was removed from FFmpeg on 2018-01-0
 > without ffserver you can't output to an URL and will get the error
 >
 > `[NULL @ 0x7fd92a000000] Unable to find a suitable output format for 'http://localhost:8090/camera.ffm'`
+
+There is a wierd thing. I've accidentally set format setting to *mpjpeg* and it should be *mjpeg*. But if I change to *mjpeg* or *avi* (I think any other correct format setting), when I open the URL it won't stream the video. Instead, it will pop out the download video message.
