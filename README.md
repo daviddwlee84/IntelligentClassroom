@@ -9,6 +9,8 @@ Purpose:
 
 ## Demo
 
+![Demo](MacDemo/Demo.png)
+
 ```sh
 # MacOS
 cd MacDemo
@@ -26,8 +28,8 @@ open IntelligenceClassroom.app
 ## TODO
 
 * [ ] ffmpeg Audio sound
-* [ ] Demo Screenshot
 * [ ] Make a portable package?!
+* [ ] Chatroom
 
 ## UML Diagram
 
